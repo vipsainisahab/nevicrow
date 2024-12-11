@@ -1,0 +1,99 @@
+.card-carousel-card {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px; // Padding for the entire card carousel
+    margin-top: 10rem;
+    overflow: hidden; // Ensure content stays within bounds
+  
+    .marquee {
+      display: flex;
+      gap: 20px; // Space between cards
+      justify-content: center; // Center align cards
+      padding: 0 10px; // Add padding to the left and right of the marquee
+  
+      .card {
+        background: #ffffff;
+        // border-radius: 8px;
+        // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        padding: 20px 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          transform: translateY(0px); // Move card upward
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+  
+        // Top content
+        .card-top {
+          .card-start-popup {
+            display: flex;
+            justify-content: space-between;
+  
+            .card-star {
+              .stars {
+                color: #ffd700; // Gold color for stars
+                font-size: 20px;
+                margin-bottom: 10px;
+                text-align: start;
+              }
+  
+              h5 {
+                font-size: 25px;
+                font-weight: bold;
+                color: #333;
+                margin: 20px 0;
+                text-align: start;
+              }
+            }
+  
+            .card-cots {
+              font-size: 70px;
+              margin-top: 20px;
+            }
+          }
+  
+          p {
+            font-size: 14px;
+            color: #7a89af;
+            margin: 10px 0;
+            text-align: start;
+          }
+        }
+  
+        // Bottom content
+        .card-bottom {
+          display: flex;
+          align-items: start;
+          justify-content: start;
+          gap: 2rem; // Space between image and name
+          margin-top: 15px;
+  
+          .user-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%; // Circular image
+            object-fit: cover;
+          }
+  
+          .user-name {
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+  
+            p {
+              color: #a39f9f;
+            }
+  
+            span {
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+  

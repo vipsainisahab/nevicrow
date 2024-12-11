@@ -1,0 +1,143 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Keeps the carousel content centered */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &__content {
+    display: flex;
+    justify-content: center; /* Ensures content stays centered */
+    gap: 5rem; /* Adjust this gap as needed */
+    align-items: center; /* Centers the items vertically */
+    position: relative; /* Keeps buttons above the content */
+
+    &.scale-animation {
+      animation: scaleIn 1s ease-in-out;
+    }
+  }
+
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    flex: 1 0 calc(33.33% - 1rem);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+
+    .carousel__image-wrapper {
+      position: relative;
+      display: inline-block;
+
+      .rotating-text {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #ff5a18;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        font-weight: bolder;
+        line-height: 30px;
+        font-size: 14px;
+        animation: rotateText 10s linear infinite;
+        z-index: 2;
+        margin-top: 1rem;
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        object-fit: cover;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      color: #ff5a18;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    button {
+      background-color: transparent;
+      color: black;
+      border: 1px solid;
+      font-family: "Courier New", Courier, monospace;
+      padding: 5px 20px; /* Adjusted padding for better appearance */
+      word-spacing: 0.5rem; /* Increased word spacing */
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2.5rem; /* You can adjust this value */
+    cursor: pointer;
+    z-index: 20;
+    color: #333;
+    padding: 20px; /* Increased padding for larger clickable area */
+    width: 70px; /* Set width to adjust button size */
+    height: 70px; /* Set height to adjust button size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%; /* Full border radius for circular button */
+    letter-spacing: 0.1rem; /* Adjust letter-spacing here */
+  }
+
+  .carousel__button.left {
+    left: 50px; /* Left button position */
+  }
+
+  .carousel__button.right {
+    right: 50px; /* Right button position */
+  }
+
+  .carousel__button:hover {
+    background: none;
+    color: #333;
+  }
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.button-cousal {
+  letter-spacing: 0.3rem;
+  border-radius: 10rem;
+  margin-top: 1rem;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
